@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An accessible, front-end-only payment form demonstration.">
+  <title>Checkout Demo — Payment form</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="checkout-shell">
+    <section class="order-panel" aria-labelledby="order-heading">
+      <a class="brand" href="#" aria-label="Orbit Studio home">
+        <span aria-hidden="true">O</span>
+        Orbit Studio
+      </a>
+
+      <div class="order-copy">
+        <p class="eyebrow">PORTFOLIO CHECKOUT</p>
+        <h1 id="order-heading">Complete your demo order.</h1>
+        <p>This page demonstrates formatting and browser-side validation. It never sends or stores payment information.</p>
+      </div>
+
+      <article class="order-summary">
+        <div>
+          <p>Interface Design Workshop</p>
+          <span>One-time access</span>
+        </div>
+        <strong>$49.00</strong>
+      </article>
+
+      <div class="total-row">
+        <span>Total</span>
+        <strong>USD $49.00</strong>
+      </div>
+    </section>
+
+    <section class="payment-panel" aria-labelledby="payment-heading">
+      <div class="panel-heading">
+        <p class="eyebrow">SECURE-FLOW DEMONSTRATION</p>
+        <h2 id="payment-heading">Payment details</h2>
+        <p>Use fictional test values only.</p>
+      </div>
+
+      <div class="saved-card" aria-label="Saved demo card ending in 4242">
+        <div>
+          <img src="images/visacard1.jpg" alt="">
+          <span><strong>Demo card</strong><small>•••• •••• •••• 4242</small></span>
+        </div>
+        <span class="demo-tag">DEMO</span>
+      </div>
+
+      <form id="payment-form" novalidate>
+        <div class="field full">
+          <label for="cardholder-name">Name on card</label>
+          <input id="cardholder-name" name="cardholderName" type="text" autocomplete="cc-name" maxlength="80" required placeholder="Jordan Lee">
+          <span class="error" id="cardholder-name-error"></span>
+        </div>
+
+        <div class="field full">
+          <label for="card-number">Card number</label>
+          <input id="card-number" name="cardNumber" type="text" inputmode="numeric" autocomplete="cc-number" maxlength="23" required placeholder="1234 5678 9012 3456" aria-describedby="card-number-help card-number-error">
+          <small id="card-number-help">Enter 13–19 digits from a fictional or approved test card.</small>
+          <span class="error" id="card-number-error"></span>
+        </div>
+
+        <div class="field">
+          <label for="expiry">Expiry</label>
+          <input id="expiry" name="expiry" type="text" inputmode="numeric" autocomplete="cc-exp" maxlength="5" required placeholder="MM/YY" aria-describedby="expiry-error">
+          <span class="error" id="expiry-error"></span>
+        </div>
+
+        <div class="field">
+          <label for="cvc">Security code</label>
+          <input id="cvc" name="cvc" type="password" inputmode="numeric" autocomplete="cc-csc" minlength="3" maxlength="4" required placeholder="CVC" aria-describedby="cvc-error">
+          <span class="error" id="cvc-error"></span>
+        </div>
+
+        <label class="preference" for="save-card">
+          <input id="save-card" name="saveCard" type="checkbox">
+          <span><strong>Show save-card preference</strong><small>Demo only — no value is stored.</small></span>
+        </label>
+
+        <button type="submit">Complete demo payment · $49.00</button>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="security-note">Front-end demonstration only. A production checkout must use a PCI-compliant payment provider and must never handle raw card data in custom JavaScript.</p>
+    </section>
+  </main>
+</body>
+</html>
