@@ -2,6 +2,20 @@
 
 An accessible, responsive checkout interface built with plain HTML, CSS, and JavaScript.
 
+## Live demo
+
+[Open the deployed payment-form demo](https://hashemquraan-402.github.io/payment-form-frontend-demo/)
+
+## Screenshots
+
+### Checkout interface
+
+![Responsive payment checkout interface](docs/screenshots/checkout-form.png)
+
+### Local validation
+
+![Successful local payment-form validation](docs/screenshots/validation-success.png)
+
 ## Features
 
 - Card-number grouping
@@ -12,6 +26,15 @@ An accessible, responsive checkout interface built with plain HTML, CSS, and Jav
 - Visible, accessible field errors and status feedback
 - Responsive two-panel layout
 - No framework or build step
+
+## Demo test values
+
+Use test values only. Never enter real payment information.
+
+- **Name:** `Jordan Lee`
+- **Card number:** `4242 4242 4242 4242`
+- **Expiry:** any future month and year, such as `12/30`
+- **Security code:** any 3 or 4 digits, such as `123`
 
 ## Run locally
 
